@@ -1,0 +1,51 @@
+﻿@model IEnumerable<ChallengeCRUD.Models.Empleado>
+
+@{
+    ViewData["Title"] = "Index";
+}
+
+<h1>Lista de empleados - Actualizar</h1>
+<div>
+    <label>      </label>
+</div>
+<table class="table">
+    <thead>
+        <tr>
+            <th>
+                Nombre completo
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.Edad)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.Departamento)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.Salario)
+            </th>
+            <th></th>
+        </tr>
+    </thead>
+    <tbody>
+        @foreach (var item in Model)
+        {
+            <tr>
+                <td>
+                    @Html.DisplayFor(modelItem => item.Nombrecompleto)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.Edad)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.Departamento)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.Salario)
+                </td>
+                <td>
+                    <a asp-action="Edit" asp-route-id="@item.Id" class="btn btn-primary">Actualizar</a>
+                </td>
+            </tr>
+        }
+    </tbody>
+</table>
